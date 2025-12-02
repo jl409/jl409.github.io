@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Nuances & Co. — Chandelles parfumées haut de gamme | Québec">
+    <meta name="twitter:title" content="Nuances & Co. — Chandelles parfumées haut de gamme | Québec">
+    <meta name="title" content="Nuances & Co. — Chandelles parfumées haut de gamme | Québec">
+    <meta name="description" content="Chandelles artisanales et bougies parfumées luxe, fabriquées au Québec. Collections écoresponsables — livraison au Québec & Montréal.">
+    <title>Nuances &amp Co</title>
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 1023px)">
+</head>
+<body>
+    <div class="fond"></div>
+    <section class="hero">
+        <div class="logo-container">
+            <img src="logobrun.svg" alt="Chandelles Nuances & Co." class="logo">
+            <img src="textlogobrun.svg" class="brand-name" alt="Nuances & Co.">
+            <div class="menu">
+                <button id="">
+                    <img src="menubar.svg">
+                </button>
+                <button id="toggle-cart">
+                    <img src="bag.svg">
+                </button>
+            </div>
+        </div>
+        <div class="hero-fixed-img">
+            <img src="illustration-temp.webp" class="positioncercle" alt="chandelle">
+        </div>
+    </section>
+    
+    <section class="hero2">
+        <div class="hero2-fixed">
+            <h1 alt="Chandelle Gourmandise d'Hiver" class="titre">Gourmandise d'Hiver</h1>
+            <p class="paragraphe">Des notes de gingembre, de miel et de cannelle se mêlent à une touche de biscuit doré, créant une atmosphère gourmande et réconfortante, comme une douceur sortie du four.<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
+            <div class="product-actions" id="product-actionsid">
+                <div class="price">30$</div>
+
+                <button alt="Ajouter la chandelle au panier" class="add-to-cart" data-variant-id="gid://shopify/ProductVariant/47354897891584">
+                    Ajouter au panier
+                    <span class="icon"><img src="plus.svg"></span>
+                </button>
+            </div>
+        </div>
+        <div class="hero2-fixed-img">
+            <img src="illustration-temp2.webp" class="positioncercle" alt="chandelle">
+            <p class="labelcercle">&Eacutedition limitée !</p>
+        </div>
+    </section>
+
+    <section class="hero3">
+        <div class="hero3-fixed">
+            <h1 alt="Chandelle Brise Boréale" class="titre">Brise Boréale</h1>
+            <p class="paragraphe">La chaleur du genévrier et du sapin s’entrelace à une sève douce, laissant dans son sillage un souffle pur et apaisant. En quelques instants, la chandelle transforme l'ambiance : votre pièce respire la forêt, pleine d’énergie et d’harmonie.
+<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
+            <div class="product-actions" id="product-actionsid2">
+                <div class="price">30$</div>
+
+                <button alt="Ajouter la chandelle au panier" class="add-to-cart" data-variant-id="gid://shopify/ProductVariant/47341448757504">
+                    Ajouter au panier
+                    <span class="icon"><img src="plus.svg"></span>
+                </button>
+            </div>
+        </div>
+        <div class="hero3-fixed-img">
+            <img src="illustration-temp.webp" class="positioncercle">
+            <p class="labelcercle">&Eacutedition limitée !</p>
+        </div>
+    </section>
+    
+
+
+    <section>
+        <div id="cart" class="hidden">
+            <p>Panier : <span id="cart-count">0</span> article(s)</p>
+            <div id="cart-lines"></div>
+            <button id="checkout" class="btn"><b>Payer</b></button>
+        </div>
+    </section>
+
+
+
+<script>
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const vh = window.innerHeight;
+
+  // Animations du premier écran
+  let scroll1 = Math.min(Math.max(scrollTop / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll", scroll1);
+
+  // Animations du deuxième écran (entre 100vh et 200vh)
+  let scroll2 = Math.min(Math.max((scrollTop - vh) / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll2", scroll2);
+
+  // Animations du troisième écran (entre 200vh et 300vh)
+  let scroll3 = Math.min(Math.max((scrollTop - 2 * vh) / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll3", scroll3);
+});
+
+</script>
+
+
+
+
+
+<script>
+const section = document.querySelector('.hero2');
+const elements = document.querySelectorAll('.hero2-fixed');
+const elements2img = document.querySelectorAll('.hero2-fixed-img');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements.forEach(el => el.classList.add('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      section.classList.add("nocolision");
+    } else {
+      elements.forEach(el => el.classList.remove('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      section.classList.remove("nocolision");
+    }
+  });
+}, { threshold: 0.75 });
+
+const observer2img = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements2img.forEach(el => el.classList.add('show-fixed'));
+    } else {
+      elements2img.forEach(el => el.classList.remove('show-fixed'));
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(section);
+observer2img.observe(section);
+</script>
+<script>
+const section3 = document.querySelector('.hero3');
+const elements3 = document.querySelectorAll('.hero3-fixed');
+const elements3img = document.querySelectorAll('.hero3-fixed-img');
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements3.forEach(el => el.classList.add('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      section3.classList.add("nocolision");
+    } else {
+      elements3.forEach(el => el.classList.remove('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      section3.classList.remove("nocolision");
+    }
+  });
+}, { threshold: 0.65 });
+
+const observer3img = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements3img.forEach(el => el.classList.add('show-fixed'));
+    } else {
+      elements3img.forEach(el => el.classList.remove('show-fixed'));
+    }
+  });
+}, { threshold: 0.5 });
+
+observer3.observe(section3);
+observer3img.observe(section3);
+</script>
+<script>
+document.getElementById("toggle-cart").addEventListener("click", () => {
+  document.getElementById("cart").classList.toggle("hidden");
+});
+</script>
+
+
+<script src="shopify.js"></script>
+</body>
+

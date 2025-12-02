@@ -1,0 +1,310 @@
+:root {
+  --scroll: 0; /* valeur entre 0 et 1 */
+  --ma-variable: 0;
+}
+
+@font-face {
+  font-family: 'Lobster Two';
+  src: url('./fonts/lobstertworegular.ttf') format('truetype');
+  font-weight: 100;
+}
+
+body {
+  background-color: #D7B675;
+  font-family: 'Lobster Two';
+}
+
+.fond{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("fond.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.labelcercle {
+  position: fixed;
+  bottom: 30vw;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  transition: none;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(255, 0, 0, 0.45); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 13px;
+  border-radius: 40px;
+  font-size: 2.2vh;
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.positioncercle {
+  width: 55%;
+  height: auto;
+  position: fixed;
+  top: 73%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  transition: none;
+  z-index: -2;
+  pointer-events: none;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.hero-fixed-img {
+  opacity: 1;
+  position: fixed;
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+.hero2-fixed-img {
+  opacity: 0;
+  position: fixed;
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.hero3-fixed-img {
+  opacity: 0;
+  position: fixed;
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  position: fixed;
+  top: clamp(10%, calc(45% - var(--scroll) * 40%), 50%); /* monte vers le haut */
+  left: clamp(5%, calc(25% - var(--scroll) * 20%), 25%); /* se décale vers la gauche */
+  transform: translate(-50%, -50%) scale(calc(1 - var(--scroll) * 0.6));
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.brand-name {
+  width: auto;
+  height: 30px;
+  position: fixed;
+  opacity: calc(100% - var(--scroll) * 100%);
+  top: calc(65% - var(--scroll) * 20%); /* monte vers le haut */
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.menu {
+  position: fixed;
+  top: 10%;
+  right: 15px;
+  transform: translate(0%, -50%);
+  background: rgba(255, 255, 255, 0.55); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 15px;
+  border-radius: 40px;
+  color: #4b3b30;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  align-items: center;
+  display: flex;
+  opacity: calc(0% + var(--scroll) * 100%);
+  z-index: 9999;
+}
+
+.menu button {
+  background: #ffffff00;
+  border: #ffffff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nocolision {
+  z-index: 2 !important;
+}
+
+.hero {
+  height: 100vh;
+}
+
+.hero2 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.hero3 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.hero2-fixed {
+  position: fixed;
+  top: 25%;
+  left: 0%;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px); /* petite translation vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  --couleur1: #42382E;
+  --couleur2: #4f4337;
+}
+.hero3-fixed {
+  position: fixed;
+  top: 25%;
+  left: 0%;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px); /* petite translation vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  --couleur1: #3C4441;
+  --couleur2: #42504A;
+}
+
+/* Positionnement original */
+.titre {
+  max-width: 81%;
+  font-size: 30px;
+  color: var(--couleur1);
+  margin: 0%;
+  padding-left: 9%;
+  padding-right: 10%;
+}
+
+.paragraphe {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 2.1vh;
+  color: var(--couleur2);
+  max-width: 80%;
+  letter-spacing: 0.2vw;
+  text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.75);
+  text-align: justify;
+}
+
+.show-fixed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Container horizontal */
+.product-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Prix */
+.price {
+  background: rgba(255, 255, 255, 0.55); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 13px;
+  border-radius: 40px;
+  font-size: 2.2vh;
+  color: var(--couleur1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Bouton ajouter */
+.add-to-cart {
+  background: rgba(255, 255, 255, 0.55); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 15px;
+  border-radius: 40px;
+  font-size: 2.2vh;
+  color: var(--couleur1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Lobster Two';
+}
+
+.add-to-cart .icon {
+  width: 2.2vh;
+  height: auto;
+  transform: translateY(10%);
+}
+
+
+#cart {
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  width: 400px;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.55); /* semi-transparent */
+  backdrop-filter: blur(10px);           /* frosted blur */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 13px;
+  border-radius: 40px;
+  font-size: 2.2vh;
+  color: var(--couleur1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: right 0.6s ease;
+  z-index: 12;
+}
+#cart.hidden {
+  right: -100% !important;
+}
+
+.btn {
+  background: #FFFFFF;
+  padding: 6px 15px;
+  border-radius: 40px;
+  font-size: 2.2vh;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+#checkout {
+  padding: 10px 19px !important;
+  min-width: 70%;
+  margin-top: 20px;
+  margin-left: 15%;
+}
+/*
+* {
+  outline: 2px solid red !important;
+}
+*/

@@ -1,0 +1,101 @@
+:root {
+  --scroll: 0; /* valeur entre 0 et 1 */
+}
+
+@font-face {
+  font-family: 'Lobster Two';
+  src: url('./fonts/lobstertworegular.ttf') format('truetype');
+  font-weight: 100;
+}
+
+body {
+  background-color: #D7B675;
+  background-image: url("fond.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 200vh;
+  font-family: 'Lobster Two';
+}
+
+.hero {
+  height: 100vh;
+}
+
+.cercle {
+  position: absolute;
+}
+
+.positioncercle {
+  width: 55%;
+  height: auto;
+  position: fixed;
+  top: 73%; /* monte vers le haut */
+  left: 80%; /* se décale vers la gauche */
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  transition: none;
+}
+/*.logo-container {
+  position: fixed;
+  top: calc(50% - var(--scroll) * 45%); /* monte vers le haut */
+  /*left: calc(25% - var(--scroll) * 20%); /* se décale vers la gauche */
+  /*transform: translate(-50%, -50%) scale(calc(1 - var(--scroll) * 0.6));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+*/
+.logo {
+  width: 200px;
+  height: auto;
+  position: fixed;
+  top: calc(50% - var(--scroll) * 40%); /* monte vers le haut */
+  left: calc(25% - var(--scroll) * 20%); /* se décale vers la gauche */
+  transform: translate(-50%, -50%) scale(calc(1 - var(--scroll) * 0.6));
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.brand-name {
+  width: auto;
+  height: 40px;
+  position: fixed;
+  top: calc(70% - var(--scroll) * 60%); /* monte vers le haut */
+  left: calc(25% - var(--scroll) * 10%); /* se décale vers la gauche */
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.hero2 {
+  height: 100vh;
+  position: relative;
+}
+
+.titre {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #42382E;
+  font-weight: 100;
+}
+.paragraphe {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #625345;
+  font-weight: 100;
+  max-width: 25%;
+}
