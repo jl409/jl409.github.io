@@ -14,10 +14,27 @@
 </head>
 <body>
     <div class="fond"></div>
+    <section class="tabs">
+      <div class="tabscontainer">
+        <nav>
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
     <section class="hero">
         <div class="logo-container">
             <img src="logobrun.svg" alt="Chandelles Nuances & Co." class="logo">
             <img src="textlogobrun.svg" class="brand-name" alt="Nuances & Co.">
+            <img src="montreal.svg" class="brand-name-sub" alt="montreal">
+            <div class="logo-container2 hidden">
+              <img src="textlogobrun.svg" class="brand-name-p2" alt="Nuances & Co.">
+              <img src="montreal.svg" class="brand-name-sub-p2" alt="montreal">
+            </div>
             <div class="menu">
                 <button id="">
                     <img src="menubar.svg">
@@ -92,6 +109,14 @@ window.addEventListener("scroll", () => {
   let scroll1 = Math.min(Math.max(scrollTop / vh, 0), 1);
   document.documentElement.style.setProperty("--scroll", scroll1);
 
+  const myElement = document.querySelector(".logo-container2");
+
+  if (scroll1 < 1) {
+    myElement.classList.add("hidden");
+  } else {
+    myElement.classList.remove("hidden");
+  }
+
   // Animations du deuxième écran (entre 100vh et 200vh)
   let scroll2 = Math.min(Math.max((scrollTop - vh) / vh, 0), 1);
   document.documentElement.style.setProperty("--scroll2", scroll2);
@@ -106,7 +131,23 @@ window.addEventListener("scroll", () => {
 
 
 
+<script>
+const section0 = document.querySelector('.hero');
+const elements0 = document.querySelectorAll('.logo-container2');
 
+const observer0 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements0.forEach(el => el.classList.add('hidden'));
+    } else {
+      elements0.forEach(el => el.classList.remove('hidden'));
+    }
+  });
+}, { threshold: 0.75 });
+
+
+observer0.observe(section0);
+</script>
 <script>
 const section = document.querySelector('.hero2');
 const elements = document.querySelectorAll('.hero2-fixed');
@@ -156,7 +197,7 @@ const observer3 = new IntersectionObserver((entries) => {
       section3.classList.remove("nocolision");
     }
   });
-}, { threshold: 0.65 });
+}, { threshold: 0.5 });
 
 const observer3img = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

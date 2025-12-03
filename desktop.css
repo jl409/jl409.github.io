@@ -27,6 +27,35 @@ body {
   pointer-events: none;
 }
 
+.tabs {
+  margin: 0 auto;
+  padding: 0 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  top: 7%;
+  right: 15%;
+}
+
+nav {
+    flex: 1; /* Le nav prend tout l'espace disponible */
+    display: flex;
+    justify-content: center; /* Centre les liens de navigation */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5vw;
+}
+
+nav ul li a {
+    color: #42382E;
+    text-decoration: none;
+    font-size: 2.2vh;
+}
+
 .labelcercle {
   position: fixed;
   bottom: 30vw;
@@ -121,6 +150,57 @@ body {
   transition: none;
 }
 
+.brand-name-sub {
+  width: auto;
+  height: 17px;
+  position: fixed;
+  opacity: calc(100% - var(--scroll) * 100%);
+  top: calc(69% - var(--scroll) * 20%); /* monte vers le haut */
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.brand-name-p2 {
+  width: auto;
+  height: 27px;
+  position: fixed;
+  opacity: 1;
+  top: 10%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:none;
+}
+
+.brand-name-sub-p2 {
+  width: auto;
+  height: 14px;
+  position: fixed;
+  opacity: 1;
+  top: 13%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: none;
+}
+
+.logo-container2 {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
 .menu {
   position: fixed;
   top: 10%;
@@ -136,7 +216,6 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   align-items: center;
   display: flex;
-  opacity: calc(0% + var(--scroll) * 100%);
   z-index: 9999;
 }
 

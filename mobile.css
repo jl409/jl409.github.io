@@ -27,6 +27,10 @@ body {
   pointer-events: none;
 }
 
+.tabs {
+  display: none;
+}
+
 .labelcercle {
   position: fixed;
   top: 62%;
@@ -119,6 +123,24 @@ body {
   align-items: center;
   gap: calc(2rem - var(--scroll) * 1.5rem);
   transition: none;
+}
+
+.brand-name-sub {
+  width: auto;
+  height: 17px;
+  position: fixed;
+  opacity: calc(100% - var(--scroll) * 100%);
+  top: calc(49% - var(--scroll) * 20%); /* monte vers le haut */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--scroll) * 1.5rem);
+  transition: none;
+}
+
+.logo-container2 {
+  display: none;
 }
 
 .menu {
