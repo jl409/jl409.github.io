@@ -143,6 +143,10 @@ body {
   display: none;
 }
 
+.defilement {
+  display: none;
+}
+
 .menu {
   position: fixed;
   top: 10%;

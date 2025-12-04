@@ -31,6 +31,10 @@
             <img src="logobrun.svg" alt="Chandelles Nuances & Co." class="logo">
             <img src="textlogobrun.svg" class="brand-name" alt="Nuances & Co.">
             <img src="montreal.svg" class="brand-name-sub" alt="montreal">
+            <div class="defilement">
+              <img src="defilement.svg" class="icondefilement" alt="defilement">
+              <p class="textedefilement">Faites défiler pour en voir plus.</p>
+            </div>
             <div class="logo-container2 hidden">
               <img src="textlogobrun.svg" class="brand-name-p2" alt="Nuances & Co.">
               <img src="montreal.svg" class="brand-name-sub-p2" alt="montreal">
@@ -134,13 +138,16 @@ window.addEventListener("scroll", () => {
 <script>
 const section0 = document.querySelector('.hero');
 const elements0 = document.querySelectorAll('.logo-container2');
+const elements01 = document.querySelectorAll('.defilement');
 
 const observer0 = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       elements0.forEach(el => el.classList.add('hidden'));
+      elements01.forEach(el => el.classList.remove('hidden'));
     } else {
       elements0.forEach(el => el.classList.remove('hidden'));
+      elements01.forEach(el => el.classList.add('hidden'));
     }
   });
 }, { threshold: 0.75 });
@@ -165,7 +172,7 @@ const observer = new IntersectionObserver((entries) => {
       section.classList.remove("nocolision");
     }
   });
-}, { threshold: 0.75 });
+}, { threshold: 0.55 });
 
 const observer2img = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

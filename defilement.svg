@@ -1,0 +1,37 @@
+<!-- Scroll indicator SVG — animation du point selon ta demande -->
+<svg class="scroll-indicator" width="48" height="60" viewBox="0 0 48 60" role="img" aria-label="Faire défiler vers le bas" xmlns="http://www.w3.org/2000/svg">
+  <title>Faire défiler vers le bas</title>
+
+  <!-- Pastille (scroll wheel) : 
+       - commence petite et invisible en bas (cy=44, r=0, opacity=0)
+       - grossit (apparaît) => reste en bas
+       - monte jusqu'en haut (cy=22)
+       - se maintient puis rapetisse et disparaît
+       - boucle -->
+  <circle cx="24" cy="44" r="0" fill="#42382E" opacity="0">
+    <!-- rayon : 0 -> 5 (apparition) -> maintenu -> 0 (disparition) -->
+    <animate attributeName="r"
+             dur="1.6s"
+             values="0;5;5;0"
+             keyTimes="0;0.2;0.8;1"
+             calcMode="spline"
+             keySplines="0.3 0 0.2 1;0.3 0 0.2 1;0.3 0 0.2 1"
+             repeatCount="indefinite" />
+
+    <!-- déplacement vertical : reste en bas pendant la phase de grossissement, puis remonte -->
+    <animate attributeName="cy"
+             dur="1.6s"
+             values="44;44;22;22"
+             keyTimes="0;0.2;0.8;1"
+             calcMode="spline"
+             keySplines="0.3 0 0.2 1;0.3 0 0.2 1;0.3 0 0.2 1"
+             repeatCount="indefinite" />
+
+    <!-- opacité : invisible -> visible -> visible -> invisible -->
+    <animate attributeName="opacity"
+             dur="1.6s"
+             values="0;1;1;0"
+             keyTimes="0;0.2;0.8;1"
+             repeatCount="indefinite" />
+  </circle>
+</svg>
