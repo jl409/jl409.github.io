@@ -1,11 +1,44 @@
-<form action="https://formsubmit.co/info@nuancesco.ca" method="POST">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
+<form id="contact-form">
+  <input type="text" name="name" required placeholder="Nom">
+  <input type="email" name="email" required placeholder="Email">
+  <textarea name="message" required placeholder="Message"></textarea>
 
-  <!-- Pour éviter le spam -->
   <input type="text" name="_honey" style="display:none">
-
   <input type="hidden" name="_captcha" value="false">
+
   <button type="submit">Envoyer</button>
 </form>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  // URL Formsubmit (expose l'email dans l'URL)
+  const endpoint = 'https://formsubmit.co/baptiste.grenier@nuancesco.ca';
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (res.ok) {
+      // succès : tu peux afficher un message ou rediriger
+      alert('Message envoyé — merci !');
+      form.reset();
+    } else {
+      const json = await res.json();
+      alert('Erreur : ' + (json.message || 'voir console'));
+      console.error(json);
+    }
+  } catch (err) {
+    console.error('Erreur fetch:', err);
+    alert('Erreur réseau — voir la console.');
+  }
+});
+</script>
