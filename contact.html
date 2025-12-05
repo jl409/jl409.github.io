@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuances &amp; Co. — Chandelles parfumées haut de gamme | Québec</title>
-    <meta property="og:title" content="Nuances &amp; Co. — Chandelles parfumées haut de gamme | Québec">
-    <meta name="twitter:title" content="Nuances &amp; Co. — Chandelles parfumées haut de gamme | Québec">
-    <meta name="title" content="Nuances &amp; Co. — Chandelles parfumées haut de gamme | Québec">
-    <meta name="description" content="Chandelles artisanales et bougies parfumées luxe, fabriquées au Québec. Collections écoresponsables — livraison au Québec & Montréal.">
+    <title>Nuances &amp; Co. — Contact</title>
+    <meta property="og:title" content="Nuances &amp; Co. — Contact">
+    <meta name="twitter:title" content="Nuances &amp; Co. — Contact">
+    <meta name="title" content="Nuances &amp; Co. — Contact">
+    <meta name="description" content="Chandelles artisanales et bougies parfumées luxe, fabriquées au Québec. Nous contacter">
     <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)">
     <link rel="stylesheet" href="mobile.css" media="(max-width: 1023px)">
     <link rel="icon" type="image/svg" href="favicon.svg">
@@ -19,15 +19,15 @@
       <div class="tabscontainer">
         <nav>
           <ul>
+            <li><a href="index.html#0">Accueil</a></li>
             <li><a href="#">Collections</a></li>
             <li><a href="#">À propos</a></li>
             <li><a href="#">FAQ</a></li>
-            <li><a href="contact.html#1">Contact</a></li>
           </ul>
         </nav>
       </div>
     </section>
-    <section class="hero" id="0">
+    <section class="hero">
         <div class="logo-container">
             <img src="logobrun.svg" alt="Chandelles Nuances & Co." class="logo">
             <img src="textlogobrun.svg" class="brand-name" alt="Nuances & Co.">
@@ -54,46 +54,26 @@
         </div>
     </section>
     
-    <section class="hero2">
+    <section class="hero2" id="1">
         <div class="hero2-fixed">
-            <h1 alt="Chandelle Gourmandise d'Hiver" class="titre">Gourmandise d'Hiver</h1>
-            <p class="paragraphe">Des notes de gingembre, de miel et de cannelle se mêlent à une touche de biscuit doré, créant une atmosphère gourmande et réconfortante, comme une douceur sortie du four.<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
-            <div class="product-actions" id="product-actionsid">
-                <div class="price">30$</div>
-
-                <button alt="Ajouter la chandelle au panier" class="add-to-cart" data-variant-id="gid://shopify/ProductVariant/47354897891584">
-                    Ajouter au panier
-                    <span class="icon"><img src="plus.svg"></span>
-                </button>
-            </div>
+            <form action="https://formspree.io/f/mzznvjqn" method="POST">
+              <label>
+                Votre courriel:
+                
+              </label>
+              <input type="email" name="email">
+              <label>
+                Votre message:
+                
+              </label>
+              <textarea name="message"></textarea>
+              <button type="submit">Envoyer</button>
+            </form>
         </div>
         <div class="hero2-fixed-img">
             <img src="illustration-temp2.webp" class="positioncercle" alt="chandelle">
-            <p class="labelcercle">&Eacutedition limitée !</p>
         </div>
     </section>
-
-    <section class="hero3">
-        <div class="hero3-fixed">
-            <h1 alt="Chandelle Brise Boréale" class="titre">Brise Boréale</h1>
-            <p class="paragraphe">La chaleur du genévrier et du sapin s’entrelace à une sève douce, laissant dans son sillage un souffle pur et apaisant. En quelques instants, la chandelle transforme l'ambiance : votre pièce respire la forêt, pleine d’énergie et d’harmonie.
-<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
-            <div class="product-actions" id="product-actionsid2">
-                <div class="price">30$</div>
-
-                <button alt="Ajouter la chandelle au panier" class="add-to-cart" data-variant-id="gid://shopify/ProductVariant/47341448757504">
-                    Ajouter au panier
-                    <span class="icon"><img src="plus.svg"></span>
-                </button>
-            </div>
-        </div>
-        <div class="hero3-fixed-img">
-            <img src="illustration-temp.webp" class="positioncercle">
-            <p class="labelcercle">&Eacutedition limitée !</p>
-        </div>
-    </section>
-    
-
 
     <section>
         <div id="cart" class="hidden">
@@ -203,40 +183,6 @@ const observer2img = new IntersectionObserver((entries) => {
 
 observer.observe(section);
 observer2img.observe(section);
-</script>
-<script>
-const section3 = document.querySelector('.hero3');
-const elements3 = document.querySelectorAll('.hero3-fixed');
-const elements3img = document.querySelectorAll('.hero3-fixed-img');
-
-const observer3 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      elements3.forEach(el => el.classList.add('show-fixed'));
-      document.getElementById("cart").classList.add("hidden");
-      document.getElementById("menu").classList.add("hidden");
-      section3.classList.add("nocolision");
-    } else {
-      elements3.forEach(el => el.classList.remove('show-fixed'));
-      document.getElementById("cart").classList.add("hidden");
-      document.getElementById("menu").classList.add("hidden");
-      section3.classList.remove("nocolision");
-    }
-  });
-}, { threshold: 0.5 });
-
-const observer3img = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      elements3img.forEach(el => el.classList.add('show-fixed'));
-    } else {
-      elements3img.forEach(el => el.classList.remove('show-fixed'));
-    }
-  });
-}, { threshold: 0.5 });
-
-observer3.observe(section3);
-observer3img.observe(section3);
 </script>
 <script>
 document.getElementById("toggle-cart").addEventListener("click", () => {
