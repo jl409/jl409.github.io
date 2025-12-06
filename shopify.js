@@ -126,7 +126,19 @@ async function addToCart(variantId, quantity = 1) {
     }
 
     // RENDER
-    renderCartFromCartObject(result.cart);
+    // après le check des userErrors...
+    // RENDER (ancienne ligne commentée)
+    // renderCartFromCartObject(result.cart);
+
+    // nouvelle logique : récupérer le panier complet (avec prix) puis render
+    const freshCart = await getCart(cartId);
+    if (freshCart) {
+      renderCartFromCartObject(freshCart);
+    } else {
+      // fallback sur l'objet retourné si getCart échoue
+      renderCartFromCartObject(result.cart);
+    }
+
 }
 
 // ---------- récupérer le panier (détails) ----------
