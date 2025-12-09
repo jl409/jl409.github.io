@@ -120,6 +120,16 @@ nav ul li a {
   transition: opacity 0.3s ease;
   z-index: -1;
 }
+.hero4-fixed-img {
+  opacity: 0;
+  position: fixed;
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
 
 .logo {
   width: 120px;
@@ -220,6 +230,13 @@ nav ul li a {
   z-index: 0;
 }
 
+.hero4 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
 .hero2-fixed {
   position: fixed;
   top: 18%;
@@ -241,6 +258,17 @@ nav ul li a {
   transition: opacity 0.3s ease, transform 0.3s ease;
   --couleur1: #3C4441;
   --couleur2: #42504A;
+}
+.hero4-fixed {
+  position: fixed;
+  top: 18%;
+  left: 0%;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px); /* petite translation vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  --couleur1: #42382E;
+  --couleur2: #4f4337;
 }
 
 /* Positionnement original */

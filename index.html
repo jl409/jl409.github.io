@@ -103,6 +103,24 @@
         </div>
     </section>
     
+    <section class="hero4">
+        <div class="hero4-fixed">
+            <h1 alt="Chandelle Rose de Minuit" class="titre">Rose de Minuit</h1>
+            <p class="paragraphe">Une rose fraîche qui s’unit à la chaleur du tabac pour créer un accord moderne et envoûtant. Des touches de lys, de tonka et d’ambroxan ajoutent une profondeur raffinée. Une rose unique, urbaine et irrésistiblement sensuelle.</p>
+            <div class="product-actions" id="product-actionsid2">
+                <div class="price">30$</div>
+
+                <button alt="Ajouter la chandelle au panier" class="add-to-cart" data-variant-id="gid://shopify/ProductVariant/47431718895872">
+                    Ajouter au panier
+                    <span class="icon"><img src="plus.svg"></span>
+                </button>
+            </div>
+        </div>
+        <div class="hero4-fixed-img">
+            <img src="Dubaï.webp" class="positioncercle">
+            <p class="labelcercle">Nouveau !</p>
+        </div>
+    </section>
 
 
     <section>
@@ -247,6 +265,40 @@ const observer3img = new IntersectionObserver((entries) => {
 
 observer3.observe(section3);
 observer3img.observe(section3);
+</script>
+<script>
+const section4 = document.querySelector('.hero4');
+const elements4 = document.querySelectorAll('.hero4-fixed');
+const elements4img = document.querySelectorAll('.hero4-fixed-img');
+
+const observer4 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements4.forEach(el => el.classList.add('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      document.getElementById("menu").classList.add("hidden");
+      section4.classList.add("nocolision");
+    } else {
+      elements4.forEach(el => el.classList.remove('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      document.getElementById("menu").classList.add("hidden");
+      section4.classList.remove("nocolision");
+    }
+  });
+}, { threshold: 0.5 });
+
+const observer4img = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements4img.forEach(el => el.classList.add('show-fixed'));
+    } else {
+      elements4img.forEach(el => el.classList.remove('show-fixed'));
+    }
+  });
+}, { threshold: 0.5 });
+
+observer4.observe(section4);
+observer4img.observe(section4);
 </script>
 <script>
 document.getElementById("toggle-cart").addEventListener("click", () => {
