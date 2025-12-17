@@ -493,6 +493,217 @@ form label {
   font-size: 2.2vh;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  column-gap: 1%;
+  row-gap: 3%;
+  padding: 2%;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 13px 13px;
+  border-radius: 40px;
+  font-size: 1.5vh;
+  color: #42382E;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 30vw;
+  width: calc(20% - 1%);
+  transition: width 0.5s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1%;
+}
+
+/* Layout pour item sélectionné : image à gauche, contenu à droite */
+.item.selected {
+  flex-direction: row;
+  align-items: stretch; /* Étire les enfants sur toute la hauteur */
+}
+
+/* Container de l'image */
+.item > div:first-child {
+  position: relative;
+  margin: 3% 3%;
+  padding-top: 92%;
+  flex-shrink: 0;
+}
+
+.item.selected > div:first-child {
+  width: 35%;
+  margin: 0;
+  padding-top: 0;
+  height: 100%;
+}
+
+/* Cacher les images des items compressés */
+.item.same-row > div:first-child {
+  display: none;
+}
+
+.item div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  display: block;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.item.selected > div:first-child img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.img2grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  display: block;
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img2grid:hover {
+  opacity: 1;
+}
+
+/* Container pour le contenu (h2, p, button, etc.) */
+.item-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.item.selected .item-content {
+  padding-left: 3%;
+  overflow-y: auto;
+  height: 100%; /* Prend toute la hauteur */
+  justify-content: flex-start;
+}
+
+/* Cacher le contenu des items compressés */
+.item.same-row .item-content {
+  display: none;
+}
+
+.item h2 {
+  margin: 5% 3%;
+  font-size: 1.5vw;
+  padding: 0%;
+}
+
+.item.selected h2 {
+  margin: 0 0 3% 0;
+  padding-left: 0;
+}
+
+.item p {
+  margin: 0% 3%;
+  padding: 0%;
+  font-size: 0.9vw;
+  letter-spacing: 0.1vw;
+}
+
+.item.selected p {
+  margin: 2% 0;
+  padding-left: 0;
+}
+
+.item span {
+  margin: 0% 3%;
+  padding: 0%;
+  font-size: 0.9vw;
+  letter-spacing: 0.1vw;
+  text-decoration: underline;
+}
+
+.select-btn {
+  margin: 2% 3%;
+  padding: 8px 16px;
+  background: rgba(66, 56, 46, 0.8);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8vw;
+  transition: background 0.3s ease; /* Retirer transform de la transition */
+}
+
+.item.selected .select-btn {
+  margin: 3% 0 0 0;
+  align-self: flex-start;
+}
+
+.select-btn:hover {
+  background: rgba(66, 56, 46, 1);
+  /* Retirer transform: scale(1.05); pour éviter la scrollbar */
+}
+/* Paragraphes */
+.p-normal {
+  margin: 0% 3%;
+  padding: 0%;
+  font-size: 0.9vw;
+  letter-spacing: 0.1vw;
+}
+
+.p-expanded {
+  margin: 0% 3%;
+  padding: 0%;
+  font-size: 0.9vw;
+  letter-spacing: 0.1vw;
+}
+
+.item.selected .p-expanded {
+  margin: 2% 0;
+  padding-left: 0;
+}
+
+/* Bouton d'action */
+.action-btn {
+  margin: 3% 3% 0 3%;
+  padding: 10px 20px;
+  background: rgba(66, 56, 46, 0.9);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9vw;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.item.selected .action-btn {
+  margin: 3% 0 0 0;
+}
+
+.action-btn:hover {
+  background: rgba(66, 56, 46, 1);
+}
+
+
+
+#toggle-menu img{
+  content: url("Grid.svg");
+}
+
+#menu {
+  display: none;
+}
 /*
 * {
   outline: 2px solid red !important;

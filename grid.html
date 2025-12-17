@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuances &amp; Co. — Grille</title>
+    <meta property="og:title" content="Nuances &amp; Co. — Contact">
+    <meta name="twitter:title" content="Nuances &amp; Co. — Contact">
+    <meta name="title" content="Nuances &amp; Co. — Contact">
+    <meta name="description" content="Chandelles artisanales et bougies parfumées luxe, fabriquées au Québec. Nous contacter">
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 1023px)">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    <div class="fond"></div>
+    <section class="tabs">
+      <div class="tabscontainer">
+        <nav>
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="contact.html#1">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="hero">
+        <div class="logo-container">
+            <img src="logobrun.svg" alt="Chandelles Nuances & Co." class="logo">
+            <img src="textlogobrun.svg" class="brand-name" alt="Nuances & Co.">
+            <img src="montreal.svg" class="brand-name-sub" alt="montreal">
+            <div class="defilement">
+              <img src="defilement.svg" class="icondefilement" alt="defilement">
+              <p class="textedefilement">Faites défiler pour en voir plus.</p>
+            </div>
+            <div class="logo-container2 hidden">
+              <img src="textlogobrun.svg" class="brand-name-p2" alt="Nuances & Co.">
+              <img src="montreal.svg" class="brand-name-sub-p2" alt="montreal">
+            </div>
+            <div class="menu">
+                <button id="toggle-grid">
+                    <img src="menubar.svg">
+                </button>
+                <button id="toggle-cart">
+                    <img src="bag.svg">
+                </button>
+            </div>
+        </div>
+        <div class="hero-fixed-img" style="opacity: 0; transition: opacity 0.3s ease;">
+            <img src="illustration-temp3.webp" class="positioncercle" alt="chandelle">
+        </div>
+    </section>
+    
+    <section class="hero2" id="1">
+        <div class="hero2-fixed" style="width: 100% ! important;">
+            <div class="grid">
+                <div class="item">
+                    <div>
+                        <img src="illustration-temp2.webp">
+                    </div>
+                    <div class="item-content">
+                        <h2>Gourmandise d'Hiver</h2>
+                        <p class="p-normal">Des notes de gingembre, de miel et de cannelle se mêlent à une touche de biscuit doré...</p>
+                        <p class="p-expanded" style="display: none;">Des notes de gingembre, de miel et de cannelle se mêlent à une touche de biscuit doré, créant une atmosphère gourmande et réconfortante, comme une douceur sortie du four.<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
+                        <button class="action-btn" style="display: none;">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="illustration-temp.webp">
+                    </div>
+                    <div class="item-content">
+                        <h2>Brise Boréale</h2>
+                        <p class="p-normal">La chaleur du genévrier et du sapin s’entrelace à une sève douce, laissant dans son sillage un souffle pur et apaisant...</p>
+                        <p class="p-expanded" style="display: none;">La chaleur du genévrier et du sapin s’entrelace à une sève douce, laissant dans son sillage un souffle pur et apaisant. En quelques instants, la chandelle transforme l'ambiance : votre pièce respire la forêt, pleine d’énergie et d’harmonie.
+<br>Édition hivernale en série limitée, jusqu’à épuisement des stocks.</p>
+                        <button class="action-btn" style="display: none;">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="Dubai.webp">
+                        <img src="Dubai-2.webp" class="img2grid">
+                    </div>
+                    <div class="item-content">
+                        <h2>Rose de Minuit</h2>
+                        <p  class="p-normal">Une rose fraîche qui s’unit à la chaleur du tabac pour créer un accord moderne et envoûtant...</p>
+                        <p class="p-expanded" style="display: none;">Une rose fraîche qui s’unit à la chaleur du tabac pour créer un accord moderne et envoûtant. Des touches de lys, de tonka et d’ambroxan ajoutent une profondeur raffinée. Une rose unique, urbaine et irrésistiblement sensuelle.</p>
+                        <button class="action-btn" style="display: none;">Ajouter au panier</button>
+                    </div>
+                </div>
+                <div class="item">
+
+                </div>
+                <div class="item">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="cart" class="hidden">
+            <p>Panier : <span id="cart-count">0</span> article(s)</p>
+            <div id="cart-lines"></div>
+            <button id="checkout" class="btn"><b>Payer</b></button>
+        </div>
+    </section>
+    <section>
+        <div id="menu" class="hidden">
+            <div>
+              <nav>
+                <ul>
+                  <li><a href="index.html#0">Accueil</a></li>
+                  <li><a href="#">Collections</a></li>
+                  <li><a href="#">À propos</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </nav>
+            </div>
+        </div>
+    </section>
+
+
+
+<script>
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const vh = window.innerHeight;
+
+  // Animations du premier écran
+  let scroll1 = Math.min(Math.max(scrollTop / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll", scroll1);
+
+  const myElement = document.querySelector(".logo-container2");
+
+  if (scroll1 < 1) {
+    myElement.classList.add("hidden");
+  } else {
+    myElement.classList.remove("hidden");
+  }
+
+  // Animations du deuxième écran (entre 100vh et 200vh)
+  let scroll2 = Math.min(Math.max((scrollTop - vh) / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll2", scroll2);
+
+  // Animations du troisième écran (entre 200vh et 300vh)
+  let scroll3 = Math.min(Math.max((scrollTop - 2 * vh) / vh, 0), 1);
+  document.documentElement.style.setProperty("--scroll3", scroll3);
+});
+
+</script>
+
+
+
+
+<script>
+const section0 = document.querySelector('.hero');
+const elements0 = document.querySelectorAll('.logo-container2');
+const elements01 = document.querySelectorAll('.defilement');
+const elements2img = document.querySelectorAll('.hero-fixed-img');
+
+const observer0 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements0.forEach(el => el.classList.add('hidden'));
+      elements01.forEach(el => el.classList.remove('hidden'));
+    } else {
+      elements0.forEach(el => el.classList.remove('hidden'));
+      elements01.forEach(el => el.classList.add('hidden'));
+    }
+  });
+}, { threshold: 0.75 });
+
+const observer2img = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements2img.forEach(el => el.classList.add('show-fixed'));
+    } else {
+      elements2img.forEach(el => el.classList.remove('show-fixed'));
+    }
+  });
+}, { threshold: 0.5 });
+
+observer0.observe(section0);
+observer2img.observe(section0);
+</script>
+<script>
+const section = document.querySelector('.hero2');
+const elements = document.querySelectorAll('.hero2-fixed');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      elements.forEach(el => el.classList.add('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      document.getElementById("menu").classList.add("hidden");
+      section.classList.add("nocolision");
+    } else {
+      elements.forEach(el => el.classList.remove('show-fixed'));
+      document.getElementById("cart").classList.add("hidden");
+      document.getElementById("menu").classList.add("hidden");
+      section.classList.remove("nocolision");
+    }
+  });
+}, { threshold: 0.55 });
+
+
+
+observer.observe(section);
+
+</script>
+<script>
+document.getElementById("toggle-cart").addEventListener("click", () => {
+  document.getElementById("cart").classList.toggle("hidden");
+  document.getElementById("menu").classList.add("hidden");
+});
+document.getElementById("toggle-grid").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+</script>
+
+<script src="grid.js"></script>
+<script src="shopify.js"></script>
+</body>
+

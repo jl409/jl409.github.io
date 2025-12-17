@@ -306,8 +306,12 @@ document.getElementById("toggle-cart").addEventListener("click", () => {
   document.getElementById("menu").classList.add("hidden");
 });
 document.getElementById("toggle-menu").addEventListener("click", () => {
-  document.getElementById("menu").classList.toggle("hidden");
-  document.getElementById("cart").classList.add("hidden");
+  if (window.innerWidth < 1024) {
+    document.getElementById("menu").classList.toggle("hidden");
+    document.getElementById("cart").classList.add("hidden");
+  } else {
+    window.location.href = "grid.html#1";
+  }
 });
 </script>
 
